@@ -6,6 +6,8 @@ source .env
 # Create XFS filesystem
 sudo mkfs.xfs /dev/sdb
 sudo mkdir /data
+UUID=$(sudo blkid -o value -s UUID /dev/sdb)
+echo "UUID=$UUID /data xfs defaults 0 2" | sudo tee -a /etc/fstab
 sudo mount /dev/sdb /data
 sudo mkdir -p /data/{influxdb,telegraf,grafana} && sudo chmod -R 777 /data
 sudo chown -R tmgvr:tmgvr /data
