@@ -13,7 +13,7 @@ INFLUXDB_PASSWORD="secret123"
 
 # Grafana Configuration
 GRAFANA_ADMIN_USER="admin"
-GRAFANA_ADMIN_PASSWORD="Ultra123!"
+GRAFANA_ADMIN_PASSWORD="secret123"
 GRAFANA_URL="http://Address:3000"
 DATASOURCE_NAME="InfluxDBGrafana"
 
