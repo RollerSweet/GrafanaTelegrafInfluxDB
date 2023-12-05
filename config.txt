@@ -1,0 +1,25 @@
+# InfluxDB Configuration
+INFLUXDB_URL=http://Address:8086
+INFLUXDB_TOKEN=INFLUXTOKEN
+INFLUXDB_ORG_NAME=vCenterOrg
+INFLUXDB_BUCKET=vCenterBucket
+INFLUXDB_USERNAME=admin
+INFLUXDB_PASSWORD=PASSWORD123
+
+# Grafana Configuration
+GRAFANA_ADMIN_USER=admin
+GRAFANA_ADMIN_PASSWORD=PASSWORD123
+GRAFANA_URL=http://Address:3000
+DATASOURCE_NAME=InfluxDBGrafana
+DOMAIN_NAME_SEP=DC=domain,DC=name
+GRAFANA_DOMAIN_USER=Grafana
+GRAFANA_DOMAIN_PASSWORD=PASSWORD123
+
+# vSphere Configuration for Telegraf
+VSHERE_URL=https://vCenterAddress/sdk
+VSHERE_USERNAME=administrator@vsphere.local
+VSHERE_PASSWORD=PASSWORD123
+
+# nginx Configuration
+HOST_IP=Address
+DOMAIN_NAME=domain.name
