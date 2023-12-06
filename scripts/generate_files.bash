@@ -119,7 +119,7 @@ cat <<EOF > /data/telegraf/telegraf.conf
   token = "$INFLUXDB_TOKEN"
   organization = "$INFLUXDB_ORG_NAME"
   bucket = "$INFLUXDB_BUCKET"
-  timeout = "0s"
+  timeout = "3s"
 
 [[inputs.vsphere]]
   vcenters = [ "$VSHERE_URL" ]
