@@ -22,14 +22,6 @@ podman run -d \
   --privileged \
   nginx:latest
 
-# Run InfluxDB container
-podman run -d --name=influxdb \
-  --restart=always \
-  -p 8086:8086 \
-  -v /data/influxdb:/root/.influxdb2 \
-  --net=influxdb-telegraf-net \
-  influxdb:2.0
-
 # Run Grafana container
 podman run -d -p 3000:3000 --name=grafana \
   --restart=always \
@@ -43,6 +35,26 @@ podman run -d -p 3000:3000 --name=grafana \
   --privileged \
   grafana/grafana:latest
 
+# Run InfluxDB container
+podman run -d --name=influxdb \
+  --restart=always \
+  -p 8086:8086 \
+  -v /data/influxdb:/root/.influxdb2 \
+  --net=influxdb-telegraf-net \
+  influxdb:2.0
+  
+sleep 30
+
+# Configure InfluxDB
+podman exec -it influxdb influx setup \
+  --org "$INFLUXDB_ORG_NAME" \
+  --bucket "$INFLUXDB_BUCKET" \
+  --username "$INFLUXDB_USERNAME" \
+  --password "$INFLUXDB_PASSWORD" \
+  --token "$INFLUXDB_TOKEN" \
+  --force
+
+
 
 # Run Telegraf container
 podman run -d --name=telegraf \
@@ -52,4 +64,4 @@ podman run -d --name=telegraf \
   --privileged \
   telegraf:latest
 
-sleep 60
+sleep 30
