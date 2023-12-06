@@ -4,7 +4,7 @@ This repository provides a comprehensive guide for monitoring vSphere using Graf
 
 ## Credits
 
-The inspiration for this amazing dashboard comes from [Jorge de la Cruz's GitHub repository](https://github.com/jorgedlcruz/vmware-grafana). Full credits for the original dashboard concept and design go to this resource.
+All credits for the amazing dashboards go to [Jorge de la Cruz's GitHub repository](https://github.com/jorgedlcruz/vmware-grafana)!
 
 ## Prerequisites
 
