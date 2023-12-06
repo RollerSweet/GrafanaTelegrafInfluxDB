@@ -4,16 +4,6 @@
 source "$(dirname "$0")/../config.txt"
 PARENT_DIR="$(dirname "$0")/.."
 
-# Configure InfluxDB
-podman exec -it influxdb influx setup \
-  --org "$INFLUXDB_ORG_NAME" \
-  --bucket "$INFLUXDB_BUCKET" \
-  --username "$INFLUXDB_USERNAME" \
-  --password "$INFLUXDB_PASSWORD" \
-  --token "$INFLUXDB_TOKEN" \
-  --force
-
-sleep 60
 
 curl -X POST "$GRAFANA_URL/api/datasources" \
     -H "Content-Type: application/json" \
