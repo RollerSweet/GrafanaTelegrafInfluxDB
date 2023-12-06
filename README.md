@@ -5,6 +5,7 @@ This repository provides a comprehensive guide for monitoring vSphere using Graf
 ## Credits
 
 All credits for the amazing dashboards go to [Jorge de la Cruz's GitHub repository](https://github.com/jorgedlcruz/vmware-grafana)!
+Go to the link for pictures of the dashboard.
 
 ## Prerequisites
 
@@ -54,11 +55,3 @@ For any issues or support requests, please file an issue on this GitHub reposito
 ---
 
 Thank you for using GrafanaTelegrafInfluxDB for monitoring your vSphere environment! 🚀
-
-if you want to delete and start over
-```bash
-podman stop $(podman ps -aq) && \
-podman rm -f $(podman ps -aq) && \
-podman network rm influxdb-telegraf-net
-podman volume rm grafana-storage
-```
